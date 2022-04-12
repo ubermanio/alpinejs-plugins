@@ -1,0 +1,34 @@
+<!-- <x-head>
+  <title>Alpine SSR example 🚀</title>
+</x-head> -->
+
+<!-- <html>
+<head>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body> -->
+<div x-data="{characters: [], init() { fetch('http://hp-api.herokuapp.com/api/characters').then(res => res.json()).then(c => this.characters = c)} }" class="container grid grid-cols-4 gap-12 py-14 mx-auto max-w-screen-lg grid-auto-rows">
+
+  <template x-for="character in characters.filter(character => character.image !== '')">
+
+    <div class="overflow-hidden bg-white rounded-md shadow-md transition-all group hover:shadow-lg">
+      <img :src="character.image" class="object-cover w-full h-64" :alt="character.name"/>
+
+      <div class="px-6 pt-4 pb-6">
+        <h4 x-text="character.name" class="mb-1 text-lg font-semibold"></h4>
+        <h6 x-text="character.house" class="text-sm font-light text-gray-800"></h6>
+      </div>
+      
+    </div>
+
+  </template>
+
+</div>
+
+<!-- <script>
+ fetch('http://hp-api.herokuapp.com/api/characters').then(res => res.json()).then(console.log)
+  </script> -->
+<!-- </body>
+
+</html> -->

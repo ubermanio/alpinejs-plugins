@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.alpinePriceOptions = {
+        currency: 'EUR',
+        language: 'de-DE'
+      }
+    </script>
+    <script src="../dist/plugin.min.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- <script></script> -->
+  </head>
+  <body x-data>
+    <p id="__test" x-text="$price(123.45)"></p>
+  </body>
+</html>

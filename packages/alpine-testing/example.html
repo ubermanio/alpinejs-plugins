@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../dist/plugin.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body x-data>
+    <div>
+      <p x-test="['inner text matches `lorem ipsum`', $el.innerText === 'lorem_ipsum']" x-text="'lorem ipsum'">def not liror isus</p>
+    </div>
+  </body>
+</html>
