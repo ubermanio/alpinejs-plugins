@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../dist/plugin.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body x-data>
+
+  <template x-component="text-field">
+    <input class="px-4 py-2 border-2 rounded-md focus:outline-none" />
+  </template>
+
+  <template x-component="main-button">
+    <button class="flex flex-row items-center justify-center gap-2 px-4 py-2 transition-colors rounded-md"
+      :class="$attr('variant') === 'primary' ? 'bg-blue-500 text-white hover:bg-blue-400' : 'bg-blue-50 text-blue-500 hover:bg-blue-100'">
+      <slot name="label">Default label</slot>
+      <slot name="icon"></slot>
+    </button>
+  </template>
+
+
+
+
+  <main-button x-prop:variant="primary">
+    <span slot="label">Hello slot2</span>
+  </main-button>
+
+  <form x-data="{name: ''}">
+    <text-field x-model="name" />
+  </form>
+</body>
+
+</html>

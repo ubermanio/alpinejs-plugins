@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="../dist/plugin.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+  <form x-data="form('/api/test', {json: true})">
+    <input
+      x-bind="field('name', (val) => [[val.length < 3, 'Please enter your name'], [val.length > 128, 'Please only enter your name'], [val.includes('a'), 'Please enter a valid email address']])" />
+    <input x-bind="field('email')" />
+    <input type="number"
+      x-bind="field('age', (val) => [[val.length > 5, 'Length must be greater than 5'], [/\d+/.test(val), 'May only contain numbers']])" />
+    <input type="date" x-bind="field('date')" />
+  </form>
+  <div x-data="{a: 1}"></div>
+</body>
+
+</html>
