@@ -5,6 +5,7 @@
    "main": "dist/plugin.cjs.js",
    "module": "dist/plugin.esm.js",
    "unpkg": "dist/plugin.min.js",
+   "private": false,
    "scripts": {
       "lint": "eslint . --ext .ts",
       "build": "tsc --noEmit && node scripts/build.js",
